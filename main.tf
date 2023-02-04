@@ -43,6 +43,11 @@ resource "azurerm_linux_virtual_machine" "example" {
     azurerm_network_interface.example.id,
   ]
 
+  admin_ssh_key {
+    username   = var.username
+    public_key = file(var.public_key)
+  }
+
   os_disk {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"

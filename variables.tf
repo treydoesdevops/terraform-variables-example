@@ -20,3 +20,13 @@ variable "size" {
 variable "admin_username" {
   type = string
 }
+
+variable "username" {
+  description = "username to be used with the ssh key"
+  type        = string
+}
+
+variable "public_key" {
+  description = "The path to the ssh key file"
+  type        = string
+}
